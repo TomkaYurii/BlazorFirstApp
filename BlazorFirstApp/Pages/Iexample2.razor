@@ -1,0 +1,22 @@
+﻿@layout Layout1
+<h2 class="bg-primary text-white text-center p-2">Example: Select “onchange” event</h2>
+@page "/Iexample2"
+<h3 class="bg-secondary text-white">@MyOption</h3>
+
+<div class="form-group">
+    <label>Name:</label>
+    <select class="form-control" @onchange="Option">
+        <option>Ram</option>
+        <option>Jack</option>
+        <option>Joe</option>
+    </select>
+</div>
+
+@code {
+    public string MyOption { get; set; }
+
+    private void Option(ChangeEventArgs e)
+    {
+        MyOption = e.Value as string;
+    }
+}

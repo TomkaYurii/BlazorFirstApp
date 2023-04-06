@@ -1,0 +1,21 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Event Propagation 1</h2>
+@page "/Iexample5"
+
+<h3 class="bg-secondary text-white">@Counter</h3>
+<form>
+    <div class="form-group">
+        <label>Counter:</label>
+        <button class="form-control" @onclick="IncreaseCounter">Increase Counter</button>
+    </div>
+</form>
+
+@code {
+    private int Counter { get; set; }
+
+    private void IncreaseCounter(MouseEventArgs e)
+    {
+        Counter++;
+    }
+}

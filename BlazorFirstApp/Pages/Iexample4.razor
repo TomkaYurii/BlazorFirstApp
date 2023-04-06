@@ -1,0 +1,20 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Example: Radio Button “onchange” event</h2>
+@page "/Iexample4"
+<h3 class="bg-secondary text-white">@SexValue</h3>
+ 
+<div class="form-group">
+    <label>Select sex:</label>
+    <input type="radio" name="sex" value="Male" @onchange="YourSex" />Male
+    <input type="radio" name="sex" value="Female" @onchange="YourSex" />Female
+</div>
+ 
+@code {
+    public string SexValue { get; set; }
+ 
+    private void YourSex(ChangeEventArgs e)
+    {
+        SexValue = e.Value as string;
+    }
+}

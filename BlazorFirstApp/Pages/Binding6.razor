@@ -1,0 +1,10 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Blazor bind:format</h2>
+@page "/Binding6"
+
+<input type="text" class="form-control" @bind="DOB" @bind:format="yyyy-MM-dd" />
+
+@code {
+    private DateTime DOB = new DateTime(2000, 11, 30);
+}

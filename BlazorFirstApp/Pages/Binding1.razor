@@ -1,0 +1,20 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">One Way Binding</h2>
+@page "/Binding1"
+
+<div class="form-group">
+    <label>Frameworks:</label>
+    <select class="form-control" value="@Frameworks">
+        <option value="Select">Select</option>
+        <option>Blazor</option>
+        <option>ASP.NET Core</option>
+        <option>React</option>
+    </select>
+</div>
+
+<div class="p-2 mb-2">Framework’s Value: @Frameworks</div>
+
+@code {
+    private string Frameworks { get; set; } = "ASP.NET Core";
+}

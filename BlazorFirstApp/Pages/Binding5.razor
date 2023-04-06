@@ -1,0 +1,11 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Blazor @@bind:event</h2>
+@page "/Binding5"
+
+<input type="text" class="form-control" @bind="President" @bind:event="oninput"/> 
+<div class="p-2 mb-2">President is: @President</div>
+
+@code {
+    private string President { get; set; }
+}

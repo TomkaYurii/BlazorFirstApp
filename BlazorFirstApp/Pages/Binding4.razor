@@ -1,0 +1,29 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Blazor bind/onchange</h2>
+@page "/Binding4"
+
+<select class="form-control" @bind="ChangeFramework">
+	<option value="Select">Select</option>
+	<option>Blazor</option>
+	<option>ASP.NET Core</option>
+	<option>React</option>
+	<option>Help</option>
+</select>
+<div class="p-2 mb-2">Framework's Value: @Frameworks</div>
+
+@code {
+	private string Frameworks { get; set; } = "ASP.NET Core";
+	public string ChangeFramework
+	{
+		get { return Frameworks; }
+		set
+		{
+			Frameworks = value;
+			if (Frameworks == "Help")
+			{
+				// call ambulance
+			}
+		}
+	}
+}

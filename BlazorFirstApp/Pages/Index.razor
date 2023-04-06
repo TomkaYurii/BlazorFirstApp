@@ -1,0 +1,59 @@
+﻿@page "/"
+
+<PageTitle>Hello Blazor</PageTitle>
+
+<h1 class="bg-info text-white">Hello</h1>
+
+<table class="table table-sm table-bordered table-striped ">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (People p in peopleList)
+        {
+            <tr class="@GetCSS(p.City)">
+                <td>@p.Name</td>
+                <td>@p.City</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="form-group">
+    <label for="city">City</label>
+    <select name="city" class="form-control" @bind="SelectedCity">
+        <option disabled selected>Select City</option>
+        @foreach (string city in Cities)
+        {
+            <option value="@city" selected="@(city == SelectedCity)">
+                @city
+            </option>
+        }
+    </select>
+</div>
+
+@code {
+    public class People
+    {
+        public string Name { get; set; }
+        public string City { get; set; }
+    }
+
+    public IEnumerable<People> peopleList => new List<People> {
+                new People { Name = "Jack Sparrow", City = "New York" },
+                new People { Name = "Bruce Wayne", City = "Gotham" },
+                new People { Name = "Clark Kent", City = "Metropolis" },
+                new People { Name = "Donald Trump", City = "New York" },
+                new People { Name = "Vladimir Zelenski", City = "Kiev" },
+                new People { Name = "Chipper Jones", City = "Beijing" },
+                new People { Name = "Cristiano Ronaldo", City = "Funchal" }
+            };
+
+    public IEnumerable<string> Cities => peopleList.Select(l => l.City).Distinct();
+
+    public string SelectedCity { get; set; }
+    public string GetCSS(string city) => SelectedCity == city ? "bg-info text-white" : "";
+}

@@ -1,0 +1,18 @@
+﻿@layout Layout1
+<h2 class="bg-primary text-white text-center p-2">Example: Checkbox “onchange” event</h2>
+@page "/Iexample3"
+<h3 class="bg-secondary text-white">@AgreeValue</h3>
+
+<div class="form-group">
+    <label>Agree to terms:</label>
+    <input type="checkbox" @onchange="Agree" />
+</div>
+
+@code {
+    public bool AgreeValue { get; set; }
+
+    private void Agree(ChangeEventArgs e)
+    {
+        AgreeValue = Convert.ToBoolean(e.Value);
+    }
+}

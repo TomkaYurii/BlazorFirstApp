@@ -1,0 +1,19 @@
+﻿@*Need to specify the name of the .NET AppAssembly to use which in most cases is the current assembly*@
+<Router AppAssembly="@typeof(App).Assembly">
+   
+    @*Found section provide the contents to display when the match to the requested route (i.e. URL) is found*@
+    <Found Context="routeData">
+        @*The RouteView populates the matching component’s contents inside the layout (UI).*@
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        @*Sets the UI focus to the top level h1 element when the navigating takes place from one page to another.*@
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <br/>
+            <p class="text-center">SSORY, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>

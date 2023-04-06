@@ -1,0 +1,23 @@
+﻿@layout Layout1
+<h2 class="bg-primary text-white text-center p-2">Single Handler for Events from Multiple Elements</h2>
+
+@page "/Iexample1"
+<h3 class="bg-secondary text-white">@FullNameValue</h3>
+
+<div class="form-group">
+    <label>Full Name:</label>
+    <input type="text" class="form-control" @onchange="@(e => FullName(e, null))" />
+    <input type="text" class="form-control" @onchange="@(e => FullName(null, e))" />
+</div>
+
+@code {
+    public string FullNameValue { get; set; }
+
+    private void FullName(ChangeEventArgs e1, ChangeEventArgs e2)
+    {
+        if (e1 is not null)
+            FullNameValue = e1.Value as string;
+        if (e2 is not null)
+            FullNameValue = FullNameValue + " " + e2.Value as string;
+    }
+}

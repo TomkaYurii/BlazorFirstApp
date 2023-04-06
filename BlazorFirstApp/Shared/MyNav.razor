@@ -1,0 +1,44 @@
+﻿<style>
+    .active {
+        color: red;
+    }
+    a{
+        text-decoration:none;
+    }
+</style>
+ 
+<div class="p-3 mb-2 bg-warning text-dark">
+    <h3 class="bg-info text-white"><a href="https://www.yogihosting.com/blazor-first-application/" target="_blank">Tutorial Link</a></h3>
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink href="/" Match="NavLinkMatch.All">
+                Index
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/City">
+                City
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/Country">
+                Country
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink href="/Continent">
+                Continent
+            </NavLink>
+        </li>
+    </ul>
+    <button class="btn btn-primary" @onclick="NavigateUser">Country</button>
+</div>
+
+@code {
+
+    [Inject]
+    public NavigationManager NM { get; set; }
+
+    public void NavigateUser() => NM.NavigateTo("/Country");
+
+}

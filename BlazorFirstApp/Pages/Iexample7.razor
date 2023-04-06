@@ -1,0 +1,16 @@
+﻿@layout Layout1
+
+<h2 class="bg-primary text-white text-center p-2">Event Propagation 2</h2>
+@page "/Iexample7"
+
+<h3 class="bg-secondary text-white">@Message1</h3>
+<h3 class="bg-secondary text-white">@Message2</h3>
+<div class="form-group" @onclick="@(() => Message1="Hello Google")">
+    Show Message:
+    <button class="form-control" @onclick="@(() => Message2="Hello Microsoft")">Show Message</button>
+</div>
+
+@code {
+    private string Message1 { get; set; }
+    private string Message2 { get; set; }
+}

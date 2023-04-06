@@ -1,0 +1,20 @@
+﻿@layout Layout1
+
+@page "/Iexample"
+<h2 class="bg-primary text-white text-center p-2">Example: Input type text “onchange” event</h2>
+
+<h3 class="bg-secondary text-white">@MyName</h3>
+
+<div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" @onchange="Name"/>
+</div>
+
+@code {
+    public string MyName { get; set; }
+
+    private void Name(ChangeEventArgs e)
+    {
+        MyName = e.Value as string;
+    }
+}
