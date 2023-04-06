@@ -38,8 +38,8 @@
 @code {
     public class People
     {
-        public string Name { get; set; }
-        public string City { get; set; }
+        public string? Name { get; set; }
+        public string? City { get; set; }
     }
 
     public IEnumerable<People> peopleList => new List<People> {
@@ -54,6 +54,6 @@
 
     public IEnumerable<string> Cities => peopleList.Select(l => l.City).Distinct();
 
-    public string SelectedCity { get; set; }
+    public string? SelectedCity { get; set; }
     public string GetCSS(string city) => SelectedCity == city ? "bg-info text-white" : "";
 }

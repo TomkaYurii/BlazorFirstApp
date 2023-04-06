@@ -19,11 +19,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Blazor Configurations
 // We have to integrates Blazor with ASP.NET Core Endpoint Routing. 
 // This will let SignalR which is the part of ASP.NET Core that handles 
 // the persistent HTTP request to work properly.
 app.MapBlazorHub();
+//The fallback route has a very low priority in route matching and so 
+//this route is initiated when other routes didn’t match.
 app.MapFallbackToPage("/_Host");
 
 app.Run();

@@ -1,5 +1,5 @@
 ﻿@page "/"
-@namespace BlazorFirstApp.Pages
+@namespace Example_BlazorFirstApp_01.Pages
 @using Microsoft.AspNetCore.Components.Web
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -11,6 +11,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Blazor First App</title>
 	<base href="~/" />
+@*	HeadOutlet component of Microsoft.AspNetCore.Components.Web namespace 
+	which renders content provided by PageTitle and HeadContent components.*@
+@*	In short it will help to set the page titles, metas, etc on the html head 
+	section for different razor components.*@
 	<component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 	<link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 	<style>
@@ -23,6 +27,8 @@
 
 <body>
 	<div class="m-1 p-1">
+		@*ServerPrerendered. It tells to render the component into static HTML 
+		and includes a marker for a Blazor server-side application*@
 		<component type="typeof(App)" render-mode="ServerPrerendered" />
 	</div>
 	<script src="_framework/blazor.server.js"></script>

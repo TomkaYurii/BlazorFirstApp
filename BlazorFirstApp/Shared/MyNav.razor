@@ -1,6 +1,7 @@
 ﻿<style>
     .active {
         color: red;
+        font-size: 120%
     }
     a{
         text-decoration:none;
@@ -8,7 +9,6 @@
 </style>
  
 <div class="p-3 mb-2 bg-warning text-dark">
-    <h3 class="bg-info text-white"><a href="https://www.yogihosting.com/blazor-first-application/" target="_blank">Tutorial Link</a></h3>
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <NavLink href="/" Match="NavLinkMatch.All">
@@ -31,7 +31,8 @@
             </NavLink>
         </li>
     </ul>
-    <button class="btn btn-primary" @onclick="NavigateUser">Country</button>
+    <br/>
+    <button class="mx-auto btn btn-success" style="width: 120px;" @onclick="NavigateUser">Country</button>
 </div>
 
 @code {
