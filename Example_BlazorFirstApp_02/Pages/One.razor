@@ -1,11 +1,30 @@
 ﻿@page "/One"
 
 <div class="p-5 bg-success">
+
     <CascadingValue Value="@MyMessage">
         <Two></Two>
     </CascadingValue>
+
 </div>
 
 @code {
     public string MyMessage = "Hello";
 }  
+
+
+
+@*@page "/One"
+
+<div class="p-5 bg-success">
+    <CascadingValue Name="Cascade1" Value="@MyMessage">
+        <CascadingValue Name="Cascade2" Value="@MyNumber">
+            <Two></Two>
+        </CascadingValue>
+    </CascadingValue>
+</div>
+
+@code {
+    public string MyMessage = "Hello";
+    public int MyNumber = 99;
+}*@

@@ -1,13 +1,16 @@
 ﻿@page "/ExampleT"
 
 <TableTemplate RowType="Person" RowData="persons">
+    
     <Header>
     <tr><th>Name</th><th>City</th></tr>
     </Header>
+
     <RowTemplate Context="p">
         <td>@p.Name</td>
         <td>@p.City</td>
     </RowTemplate>
+
 </TableTemplate>
 
 @code {

@@ -1,5 +1,7 @@
 ﻿<div class="form-group p-2 @MyBackground">
+
     <label for="city">City</label>
+
     <select name="city" class="form-control" @attributes="InputAttributes">
         <option disabled selected>Select City</option>
         @foreach (string city in Cities)
@@ -9,6 +11,7 @@
             </option>
         }
     </select>
+
 </div>
 
 @code {

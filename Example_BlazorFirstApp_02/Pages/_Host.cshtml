@@ -14,15 +14,18 @@
 	<link href="Example_BlazorFirstApp_02.styles.css" rel="stylesheet" />
 	<link rel="icon" type="image/png" href="favicon.png" />
 	<component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+	
 	<script>
 		window.setElementText = (element, text) => element.innerText = text;
 	</script>
+
 	<script>
 		window.setText = (element, text) => {
 			element.innerText = text;
 			return text;
 		};
 	</script>
+
 </head>
 <body>
 	<component type="typeof(App)" render-mode="ServerPrerendered" />

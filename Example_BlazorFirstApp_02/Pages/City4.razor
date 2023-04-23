@@ -1,7 +1,15 @@
 ﻿@page "/city4"
 
 <h3 class="bg-info text-white">Select Your City</h3>
-<SelectCity4 MyCity="Mumbai" MyBackground="bg-warning" autofocus="true" required="true" tabinded="1" myCustomEvent="@HandleCustom"/>
+
+<SelectCity4 
+    MyCity="Mumbai" 
+    MyBackground="bg-warning" 
+    autofocus="true" 
+    required="true" 
+    tabinded="1" 
+    myCustomEvent="@HandleCustom"/>
+
 <label>@SelectedCity</label>
 
 @code {

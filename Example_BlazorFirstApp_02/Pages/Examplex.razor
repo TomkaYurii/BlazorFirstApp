@@ -1,13 +1,14 @@
 ﻿@page "/Examplex"
 
 <h3 class="bg-info text-white">Hello @Name</h3>
+
 <button class="btn btn-primary" @onclick="HandleClick">Show Hello</button>
 
 @code {
-    protected override bool ShouldRender()
-    {
-        return false;
-    }
+    //protected override bool ShouldRender()
+    //{
+    //    return false;
+    //}
 
     public string Name;
 

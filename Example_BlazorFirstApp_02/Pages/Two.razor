@@ -1,9 +1,27 @@
 ﻿<div class="p-5 bg-secondary">
     <h3 class="text-white">@TransferredValue</h3>
+
     <Three></Three>
+
 </div>
 
 @code {
     [CascadingParameter]
     public string TransferredValue { get; set; }
 }
+
+
+
+@*<div class="p-5 bg-secondary">
+    <h3 class="text-white">@T1</h3>
+    <h3 class="text-white">@T2</h3>
+    <Three></Three>
+</div>
+
+@code {
+    [CascadingParameter(Name = "Cascade1")]
+    public string T1 { get; set; }
+
+    [CascadingParameter(Name = "Cascade2")]
+    public int T2 { get; set; }
+}*@
