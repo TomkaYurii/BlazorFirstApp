@@ -1,0 +1,57 @@
+﻿@page "/ExampleE"
+
+<style>
+    #components-reconnect-modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        opacity: 0.8;
+    }
+
+    .components-reconnect-hide, .components-reconnect-show > .failed, .components-reconnect-show > .rejected, .components-reconnect-failed > .reconnect, .components-reconnect-failed > .rejected, .components-reconnect-rejected > .reconnect, .components-reconnect-rejected > .failed {
+        display: none;
+    }
+
+    .components-reconnect-show, .components-reconnect-show > .reconnect, .components-reconnect-failed > .failed, .components-reconnect-rejected > .rejected {
+        display: block;
+    }
+</style>
+
+<div id="components-reconnect-modal" class="h3 bg-danger text-white text-center my-1 p-1 components-reconnect-hide">
+    Blazor Connection Lost
+    <div class="reconnect">
+        Trying to reconnect...
+    </div>
+    <div class="failed">
+        Reconnection Failed.
+        <button class="btn btn-light" onclick="window.Blazor.reconnect()">
+            Reconnect
+        </button>
+    </div>
+    <div class="rejected">
+        Reconnection Rejected.
+        <button class="btn btn-light" onclick="location.reload()">
+            Reload
+        </button>
+    </div>
+</div>
+
+<div id="blazor-error-ui" class="text-center bg-warning text-white p-1" style="display:none">
+    An error has occurred. Kindly Reload.
+    <button class="btn btn-sm btn-primary" onclick="location.reload()">
+        Reload
+    </button>
+</div>
+
+<h1 class="bg-info text-white">Blazor Errors</h1>
+
+<button class="btn btn-danger" @onclick="@(() => throw new Exception())">
+    Error
+</button>
+
+@code {
+
+}

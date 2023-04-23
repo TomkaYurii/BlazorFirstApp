@@ -1,6 +1,8 @@
 ﻿@layout Layout1
 
 @page "/Iexample"
+
+
 <h2 class="bg-primary text-white text-center p-2">Example: Input type text “onchange” event</h2>
 
 <h3 class="bg-secondary text-white">@MyName</h3>
@@ -10,11 +12,22 @@
     <input type="text" class="form-control" @onchange="Name"/>
 </div>
 
+<button @onclick="SendEmail">
+    SEND
+</button>
+
 @code {
     public string MyName { get; set; }
 
     private void Name(ChangeEventArgs e)
     {
         MyName = e.Value as string;
+    }
+
+    private void SendEmail(MouseEventArgs e)
+    {
+        /// ChangeEventArgs
+        /// MouseEventArgs
+        /// KeyboardEventArgs
     }
 }

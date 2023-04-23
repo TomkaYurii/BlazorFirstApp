@@ -1,0 +1,17 @@
+﻿<a href="https://www.yogihosting.com" target="_blank">
+    @if (Enabled)
+        @("Go to Google")
+    else
+        @("Go to YogiHosting")
+
+</a>
+
+@code {
+    private bool Enabled { get; set; } = true;
+
+    public void SetEnabled(bool enabled)
+    {
+        Enabled = enabled;
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,16 @@
+﻿<div class="form-group p-2">
+    <label for="city">City</label>
+    <select name="city" class="form-control">
+        <option disabled selected>Select City</option>
+        @foreach (string city in Cities)
+        {
+            <option value="@city">
+                @city
+            </option>
+        }
+    </select>
+</div>
+
+@code {
+    public string[] Cities = new string[] { "Washington DC", "New Delhi", "Mumbai" };
+}

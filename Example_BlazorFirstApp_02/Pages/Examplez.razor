@@ -1,0 +1,28 @@
+﻿@page "/Examplez"
+
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<div class="p-2">
+    <p class="alert-info p-3">
+        Get value via JS call: <strong>@(fromJs ?? "Empty")</strong>
+    </p>
+
+    <p class="alert-success p-3">
+        Set value via JS call: <strong @ref="element"></strong>
+    </p>
+
+    <button class="btn btn-success" @onclick="HandleClick">Click to Call JS</button>
+</div>
+
+@code {
+    private string fromJs;
+    private ElementReference element;
+
+    public async void HandleClick()
+    {
+        fromJs = await JSRuntime.InvokeAsync<string>("setText", element, "Hello from JS call!");
+        StateHasChanged();
+    }
+}

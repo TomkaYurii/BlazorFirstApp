@@ -1,0 +1,53 @@
+﻿<h1 class="bg-info text-white">People</h1>
+
+@if (person == null)
+{
+    <h2 class="bg-warning text-white p-3">Loading..</h2>
+}
+else
+{
+    <table class="table table-sm table-bordered table-striped ">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@person.Name</td>
+                <td>@person.City</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    public class Person
+    {
+        public string Name { get; set; }
+        public string City { get; set; }
+    }
+
+    [Parameter]
+    public string Name { get; set; }
+
+    public Person person { get; set; }
+
+    protected async override Task OnParametersSetAsync()
+    {
+        await Task.Delay(5000);
+
+        List<Person> pl = new List<Person> {
+            new Person { Name = "Jack Sparrow", City = "New York" },
+            new Person { Name = "Bruce Wayne", City = "Gotham" },
+            new Person { Name = "Clark Kent", City = "Metropolis" },
+            new Person { Name = "Donald Trump", City = "New York" },
+            new Person { Name = "Vladimir Putin", City = "Moscow" },
+            new Person { Name = "Chipper Jones", City = "Beijing" },
+            new Person { Name = "Cristiano Ronaldo", City = "Funchal" }
+        };
+
+        person = pl.Where(a => a.Name == Name).FirstOrDefault();
+    }
+}

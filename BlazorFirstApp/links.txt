@@ -1,0 +1,5 @@
+How to use Razor Components in Blazor
+https://www.yogihosting.com/blazor-razor-components/
+
+Blazor Events and Data Bindings
+https://www.yogihosting.com/blazor-events-data-bindings/

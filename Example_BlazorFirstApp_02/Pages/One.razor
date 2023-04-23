@@ -1,0 +1,11 @@
+﻿@page "/One"
+
+<div class="p-5 bg-success">
+    <CascadingValue Value="@MyMessage">
+        <Two></Two>
+    </CascadingValue>
+</div>
+
+@code {
+    public string MyMessage = "Hello";
+}  

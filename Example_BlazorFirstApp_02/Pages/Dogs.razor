@@ -1,0 +1,25 @@
+﻿@page "/Dogs"
+
+<TableTemplate RowType="Dog" RowData="dogs">
+    <Header>
+        <tr><th>Name</th><th>City</th></tr>
+    </Header>
+    <RowTemplate Context="p">
+        <td>@p.Breed</td>
+        <td>@p.Origin</td>
+    </RowTemplate>
+</TableTemplate>
+
+@code {
+    private List<Dog> dogs = new List<Dog>{
+        new Dog { Breed = "German Shepherd", Origin = "Germany" },
+        new Dog { Breed = "Bulldog ", Origin = "United Kingdom" },
+        new Dog { Breed = "Rottweiler", Origin = "Germany" }
+    };
+
+    private class Dog
+    {
+        public string Breed { get; set; }
+        public string Origin { get; set; }
+    }
+}

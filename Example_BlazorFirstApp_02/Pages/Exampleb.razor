@@ -1,0 +1,20 @@
+﻿@page "/Exampleb"
+
+<div class="p-3">
+	<MultiNavLink @ref="element"></MultiNavLink>
+
+	<button class="btn btn-secondary" @onclick="ToggleLinks">
+		Toggle Links
+	</button>
+</div>
+
+@code {
+	private MultiNavLink? element;
+	private bool LinkEnabled = true;
+
+	public void ToggleLinks()
+	{
+		LinkEnabled = !LinkEnabled;
+		element.SetEnabled(LinkEnabled);
+	}
+}

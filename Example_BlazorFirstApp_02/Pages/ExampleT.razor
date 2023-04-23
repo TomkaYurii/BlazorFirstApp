@@ -1,0 +1,25 @@
+﻿@page "/ExampleT"
+
+<TableTemplate RowType="Person" RowData="persons">
+    <Header>
+    <tr><th>Name</th><th>City</th></tr>
+    </Header>
+    <RowTemplate Context="p">
+        <td>@p.Name</td>
+        <td>@p.City</td>
+    </RowTemplate>
+</TableTemplate>
+
+@code {
+    private List<Person> persons = new List<Person>{
+        new Person { Name = "Jack", City = "New York" },
+        new Person { Name = "Sarah", City = "Boston" },
+        new Person { Name = "Chan", City = "Hong Kong" }
+    };
+
+    private class Person
+    {
+        public string Name { get; set; }
+        public string City { get; set; }
+    }
+}

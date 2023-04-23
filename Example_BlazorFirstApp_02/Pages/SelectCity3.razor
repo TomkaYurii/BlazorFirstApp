@@ -1,0 +1,34 @@
+﻿<div class="form-group p-2 @MyBackground">
+    <label for="city">City</label>
+    <select name="city" class="form-control">
+        <option disabled selected>Select City</option>
+        @foreach (string city in Cities)
+        {
+            <option value="@city" selected="@(city == MyCity)">
+                @city
+            </option>
+        }
+    </select>
+    <div class="panel-body">@Description</div>
+    <div class="panel-body">@Weather</div>
+    <div class="panel-body">@Elevation</div>
+</div>
+
+@code {
+    public string[] Cities = new string[] { "Washington DC", "New Delhi", "Mumbai" };
+
+    [Parameter]
+    public string MyCity { get; set; }
+
+    [Parameter]
+    public string MyBackground { get; set; }
+
+    [Parameter]
+    public RenderFragment Description { get; set; }
+
+    [Parameter]
+    public RenderFragment Weather { get; set; }
+
+    [Parameter]
+    public RenderFragment Elevation { get; set; }
+}

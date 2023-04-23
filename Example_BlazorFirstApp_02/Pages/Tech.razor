@@ -1,0 +1,11 @@
+﻿@page "/Tech/{Company}/{Framework?}"
+
+<h1 class="bg-info text-white">Technology is @Framework by @Company</h1>
+
+@code {
+    [Parameter]
+    public string Framework { get; set; }
+
+    [Parameter]
+    public string Company { get; set; }
+}

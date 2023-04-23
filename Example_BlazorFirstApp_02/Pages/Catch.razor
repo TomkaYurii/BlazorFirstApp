@@ -1,0 +1,8 @@
+﻿@page "/Catch/{*AllCatch}"
+
+<h1 class="bg-info text-white">@AllCatch</h1>
+
+@code {
+    [Parameter]
+    public string AllCatch { get; set; }
+}

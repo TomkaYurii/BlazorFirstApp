@@ -1,0 +1,124 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorRC</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="city">
+                <span class="oi oi-plus" aria-hidden="true"></span> City
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="hello" target="_blank">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Hello
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="city1">
+                <span class="oi oi-plus" aria-hidden="true"></span> Component Parameters
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Tech/Microsoft/Blazor">
+                <span class="oi oi-plus" aria-hidden="true"></span> Route Parameters
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Tech1/Microsoft/Blazor">
+                <span class="oi oi-plus" aria-hidden="true"></span> Route Constraints
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Catch/Summer/Of/69">
+                <span class="oi oi-plus" aria-hidden="true"></span> Catch all
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="city2">
+                <span class="oi oi-plus" aria-hidden="true"></span> ChildContent
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="city3">
+                <span class="oi oi-plus" aria-hidden="true"></span> RenderFragment
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="city4">
+                <span class="oi oi-plus" aria-hidden="true"></span> Child to Parent
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Parent">
+                <span class="oi oi-plus" aria-hidden="true"></span> Chain Bind
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ExampleT">
+                <span class="oi oi-plus" aria-hidden="true"></span> Template Components
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Dogs">
+                <span class="oi oi-plus" aria-hidden="true"></span> Dogs
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="One">
+                <span class="oi oi-plus" aria-hidden="true"></span> Cascading
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ExampleE">
+                <span class="oi oi-plus" aria-hidden="true"></span> Connection Error
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="ParameterSet">
+                <span class="oi oi-plus" aria-hidden="true"></span> Parameter Set
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Examplex">
+                <span class="oi oi-plus" aria-hidden="true"></span> Supress UI
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Exampley">
+                <span class="oi oi-plus" aria-hidden="true"></span> After Render
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Examplez">
+                <span class="oi oi-plus" aria-hidden="true"></span> StateHasChanged1
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="Exampleb">
+                <span class="oi oi-plus" aria-hidden="true"></span> StateHasChanged2
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
